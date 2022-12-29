@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF8">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+    <link rel="stylesheet" href="./main.css">
+    <script>
+        var nameAnimation = "More-Information-Button-Move";
+        var nameAnimationBack = "More-Information-Button-Move-Back";
+        image_link = [];
+
+        image_link[1] = "https://tuhoctiengtrung.vn/wp-content/uploads/2019/01/hinh-anh-van-mau-gioi-thieu-ha-noi-bang-tieng-trung-cuc-hay-2.jpg";
+        image_link[2] = "https://image.vtc.vn/upload/2021/07/14/sai-gon-98931-17345353.jpg";
+        image_link[3] = "https://nld.mediacdn.vn/291774122806476800/2021/9/7/3-chot-3-1630978256337659996993.jpg";
+        image_link[4] = "https://image.thanhnien.vn/w1024/Uploaded/2022/szyrbfly-bn/2021_11_13/da-nang-5242.jpg";
+
+
+        const text_Name = ["", "Ha Noi", "Sai Gon", "Phu Quoc", "Da Nang"];
+        // text_Name[1] = "Sai Gon";
+        // text_Name[2] = "Ha Noi";
+        // text_Name[3] = "Da Nang";
+        // text_Name[4] = "Phu Quoc";
+
+        const avatar_Name = ["", "https://i.postimg.cc/kGVBcp8q/hanoi.png", "https://i.postimg.cc/63b8CX8M/saigon.png",
+            "https://i.postimg.cc/Kjd4sDrL/phuquoc.png", "https://i.postimg.cc/RFZ33FZ3/danang.png"];
+
+    </script>
+</head>
+
+<body>
+    <div id="moreInformationFrame" class="frame center round-corner" style="z-index: 2; padding: 0; background: none;">
+        <div id="Front-frame" class="top-side">
+            <img id="topside-back-img" src="https://image.vtc.vn/upload/2021/07/14/sai-gon-98931-17345353.jpg" alt="">
+            <button type="button" onclick="Hiden_Infor_Frame();
+            setTimeout(function () {
+            let frame_element = document.getElementById('moreInformationFrame');
+            frame_element.style.display = 'none';
+            SetDisplayFrame();
+        }, 1000);
+        ">
+                <div class="exit-but">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </div>
+            </button>
+        </div>
+        <script>
+            function SetDisplayFrame() {
+                new Promise(resolve => setTimeout(resolve, 2000));
+                document.getElementById('moreInformationFrame').style.display = 'none';
+            }
+        </script>
+        <div id="circle-avatar-element" class="circle center avatar">
+            <img id="avatar-element" src="" alt="">
+            <!-- <img src="Appstore.png" alt=""> -->
+        </div>
+        <div id="bottom_side_element" class="bottom-side">
+            <div class="User-name">
+                <h3 id="Name-of-main-element" onclick="">...</h3>
+            </div>
+            <div class="list-option">
+                <button type="button" onclick="">
+                    <div class="butOption circle">
+                        <span class="material-symbols-outlined">
+                            search
+                        </span>
+                    </div>
+                </button>
+                <button type="button">
+                    <div class="butOption circle">
+                        <span class="material-symbols-outlined">
+                            public
+                        </span>
+                    </div>
+                </button>
+                <button type="button">
+                    <div class="butOption circle">
+                        <span class="material-symbols-outlined">
+                            favorite
+                        </span>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        function Hiden_Infor_Frame() {
+            // const current_element = document.getElementById("topside-back-img");
+            // let img_src = image_link[index];
+            // current_element.src = img_src;
+            // let frame_element = document.getElementById("moreInformationFrame");
+            // frame_element.style.display = "block";
+            let top_side_element = document.getElementById("Front-frame");
+            let bottom_side_element = document.getElementById("bottom_side_element");
+            top_side_element.style.animationName = "Down-Move-Back";
+            bottom_side_element.style.animationName = "Top-Move-Back";
+            let circle_avatar_element = document.getElementById("circle-avatar-element");
+            circle_avatar_element.style.animationName = "circle-avatar-move-Back";
+            // frame_element.style.animationName = "Hidden-more-information-frame";
+        }
+    </script>
+    <div class="frame center round-corner shadow">
+        <button class="But floatRight" onclick="Show_More_Information_Frame(2);" onmousemove="ShowButtonPlus2()"
+            onmouseout="HiddenButtonPlus2()" style="border-left: 1.5px solid white;">
+            <div class="More-Information-Button" id="button2">
+                <div class="IconPlus">
+                    <div class="L1 center"></div>
+                    <div class="L2 center"></div>
+                </div>
+            </div>
+            <img src="https://image.vtc.vn/upload/2021/07/14/sai-gon-98931-17345353.jpg" alt="">
+        </button>
+        <script>
+            function ShowButtonPlus2() {
+                let current_element = document.getElementById("button2");
+                current_element.style.animationName = nameAnimation;
+                current_element.style.cursor = "pointer";
+            }
+            function HiddenButtonPlus2() {
+                let current_element = document.getElementById("button2");
+                current_element.style.animationName = nameAnimationBack;
+            }
+        </script>
+        <button class="But floatLeft" onclick="Show_More_Information_Frame(1);" onmousemove="ShowButtonPlus1()"
+            onmouseout="HiddenButtonPlus1()" style="border-right: 1.5px solid white;">
+            <div class="More-Information-Button" id="button1">
+                <div class="IconPlus">
+                    <div class="L1 center"></div>
+                    <div class="L2 center"></div>
+                </div>
+            </div>
+            <img src="https://tuhoctiengtrung.vn/wp-content/uploads/2019/01/hinh-anh-van-mau-gioi-thieu-ha-noi-bang-tieng-trung-cuc-hay-2.jpg"
+                alt="">
+        </button>
+        <script>
+            function ShowButtonPlus1() {
+                let current_element = document.getElementById("button1");
+                current_element.style.animationName = nameAnimation;
+                current_element.style.cursor = "pointer";
+            }
+            function HiddenButtonPlus1() {
+                let current_element = document.getElementById("button1");
+                current_element.style.animationName = nameAnimationBack;
+            }
+        </script>
+        <button class="But floatRight" onclick="Show_More_Information_Frame(4);" onmousemove="ShowButtonPlus4()"
+            onmouseout="HiddenButtonPlus4()" style="border-left: 1.5px solid white;">
+            <div class="More-Information-Button" id="button4">
+                <div class="IconPlus">
+                    <div class="L1 center"></div>
+                    <div class="L2 center"></div>
+                </div>
+            </div>
+            <img src="https://image.thanhnien.vn/w1024/Uploaded/2022/szyrbfly-bn/2021_11_13/da-nang-5242.jpg" alt="">
+        </button>
+        <script>
+            function ShowButtonPlus4() {
+                let current_element = document.getElementById("button4");
+                current_element.style.animationName = nameAnimation;
+                current_element.style.cursor = "pointer";
+            }
+            function HiddenButtonPlus4() {
+                let current_element = document.getElementById("button4");
+                current_element.style.animationName = nameAnimationBack;
+            }
+        </script>
+        <button class="But floatLeft" onclick="Show_More_Information_Frame(3);" onmousemove="ShowButtonPlus3()"
+            onmouseout="HiddenButtonPlus3()" style="border-right: 1.5px solid white;">
+            <div class="More-Information-Button" id="button3">
+                <div class="IconPlus">
+                    <div class="L1 center"></div>
+                    <div class="L2 center"></div>
+                </div>
+            </div>
+            <img src="https://nld.mediacdn.vn/291774122806476800/2021/9/7/3-chot-3-1630978256337659996993.jpg" alt="">
+        </button>
+        <script>
+            function ShowButtonPlus3() {
+                let current_element = document.getElementById("button3");
+                current_element.style.animationName = nameAnimation;
+                current_element.style.cursor = "pointer";
+            }
+            function HiddenButtonPlus3() {
+                let current_element = document.getElementById("button3");
+                current_element.style.animationName = nameAnimationBack;
+            }
+        </script>
+        <script>
+            function Show_More_Information_Frame(index) {
+                document.getElementById("Name-of-main-element").innerHTML = text_Name[index];
+                let current_element = document.getElementById("topside-back-img");
+                let img_src = image_link[index];
+                current_element.src = img_src;
+
+                let frame_element = document.getElementById("moreInformationFrame");
+                frame_element.style.display = "block";
+                let top_side_element = document.getElementById("Front-frame");
+                let bottom_side_element = document.getElementById("bottom_side_element");
+                top_side_element.style.animationName = "Down-Move";
+                bottom_side_element.style.animationName = "Top-Move";
+                let circle_avatar_element = document.getElementById("circle-avatar-element");
+                circle_avatar_element.style.animationName = "circle-avatar-move";
+
+                let avt_element = document.getElementById("avatar-element");
+                let img_src2 = avatar_Name[index];
+                // avt_element.src = "saigon.png";
+                avt_element.src = img_src2;
+
+                let html = document.getElementsByTagName('html')[0];
+                html.style.background = image_link[index];
+            }
+        </script>
+    </div>
+    <div class="author-container">
+        <h4>Author:
+            <a target="_blank" href="https://www.facebook.com/chu.huy.020808/">Harryguci</a>
+        </h4>
+    </div>
+</body>
+
+</html>

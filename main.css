@@ -1,0 +1,382 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  /* background-color: rgb(61, 61, 61);
+     */
+  background-color: whitesmoke;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+  --time-speed-animation: 0.5s;
+}
+
+button {
+  outline: none;
+  display: block;
+  border: 0;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+
+button span {
+  position: relative;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+.frame {
+  display: block;
+  width: 400px;
+  height: 400px;
+  background-color: white;
+  overflow: hidden;
+  padding: 3px;
+}
+
+.shadow {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.round-corner {
+  border-radius: 10px;
+}
+
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.floatRight {
+  float: right;
+}
+
+.floatLeft {
+  float: left;
+}
+
+.frame .But {
+  width: 50%;
+  height: 50%;
+  overflow: hidden;
+  transition: all 0.5s linear;
+}
+
+.frame .But:hover img {
+  filter: brightness(70%);
+}
+
+.frame .But img {
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-10px, 0);
+}
+
+.More-Information-Button {
+  display: block;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(255, 87, 87);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+.L1 {
+  display: block;
+  width: 15px;
+  height: 3px;
+  background-color: white;
+}
+
+.L2 {
+  display: block;
+  width: 3px;
+  height: 15px;
+  background-color: white;
+}
+
+#button1 {
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation-name: none;
+  animation-duration: var(--time-speed-animation);
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+#button2 {
+  top: 25%;
+  right: 25%;
+  opacity: 0;
+  transform: translate(50%, -50%);
+  animation-name: none;
+  animation-duration: var(--time-speed-animation);
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+#button3 {
+  bottom: 25%;
+  left: 25%;
+  opacity: 0;
+  transform: translate(-50%, 50%);
+  animation-name: none;
+  animation-duration: var(--time-speed-animation);
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+#button4 {
+  bottom: 25%;
+  right: 25%;
+  opacity: 0;
+  transform: translate(50%, 50%);
+  animation-name: none;
+  animation-duration: var(--time-speed-animation);
+  animation-fill-mode: both;
+  animation-timing-function: ease-out;
+}
+
+@keyframes More-Information-Button-Move {
+  0% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+
+  100% {
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+  }
+}
+
+@keyframes More-Information-Button-Move-Back {
+  0% {
+    width: 50px;
+    height: 50px;
+    opacity: 1;
+  }
+
+  100% {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
+.top-side {
+  display: block;
+  width: 100%;
+  height: 50%;
+  top: 0;
+  background-color: white;
+  overflow: hidden;
+  animation-name: none;
+  /* animation-name : Down-Move */
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+.top-side img {
+  width: 100%;
+}
+
+.bottom-side {
+  display: block;
+  width: 100%;
+  height: 50%;
+  bottom: 0;
+  background-color: rgb(230, 82, 82);
+  /* animation-name: Top-Move; */
+  animation-name: none;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes Down-Move {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes Down-Move-Back {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes Top-Move {
+  0% {
+    transform: translateY(100%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes Top-Move-Back {
+  0% {
+    transform: translateY(0%);
+  }
+
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.circle {
+  display: block;
+  border-radius: 50%;
+}
+
+.avatar {
+  overflow: hidden;
+  border: 2px solid white;
+  width: 100px;
+  height: 100px;
+  background-color: whitesmoke;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+#circle-avatar-element {
+  /* animation-name: circle-avatar-move; */
+  animation-name: circle-avatar-move;
+  animation-delay: 0.2s;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+#circle-avatar-element img {
+  height: 100%;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+@keyframes circle-avatar-move {
+  0% {
+    transform: translate(-50%, -300px);
+  }
+
+  100% {
+    transform: translateY(-50%, -50%);
+  }
+}
+
+@keyframes circle-avatar-move-Back {
+  0% {
+    transform: translateY(-50%, -50%);
+  }
+
+  80% {
+    transform: translate(-50%, -300px);
+  }
+
+  100% {
+    transform: translate(-50%, -300px);
+  }
+}
+
+.avatar img {
+  height: 100%;
+  transform: translate(-10px, 0);
+}
+
+.User-name {
+  position: relative;
+  color: white;
+  width: 100%;
+  display: inline;
+  text-align: center;
+  top: 60px;
+}
+
+.list-option {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  justify-content: center;
+  position: relative;
+  top: 75px;
+}
+
+.butOption {
+  width: 50px;
+  height: 50px;
+  /* background-color: white; */
+  border: 2px solid white;
+  margin-right: 30px;
+}
+
+.butOption:last-child {
+  margin-right: 0;
+}
+
+.butOption:hover {
+  background-color: white;
+  color: rgb(230, 82, 82);
+}
+
+.exit-but {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgb(230, 82, 82);
+  top: 10px;
+  right: 10px;
+  box-sizing: border-box;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.exit-but:hover {
+  filter: brightness(150%);
+  cursor: pointer;
+}
+
+#moreInformationFrame {
+  display: none;
+  /* transition: all 1s linear; */
+  animation-name: none;
+  animation-duration: 0.1s;
+  animation-delay: 1s;
+}
+
+@keyframes Hidden-more-information-frame {
+  0% {
+    display: block;
+  }
+
+  100% {
+    display: none;
+  }
+}
+
+.author-container {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
